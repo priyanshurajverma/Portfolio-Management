@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Priyanshu Raj</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #f9fafb;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 5px;
+            color: #2563eb;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #6b7280;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 2px;
+            color: #1f2937;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .date {
+            font-style: italic;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .print-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .print-btn:hover {
+            background: #1d4ed8;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="no-print" style="text-align: right; margin-bottom: 20px;">
+        <button onclick="window.print()" class="print-btn">🖨️ Download / Print as PDF</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Priyanshu Raj</h1>
+            <p style="font-size: 18px; margin-top: 5px; color: #4b5563;">Web Development Fresher</p>
+            <div class="contact-info">
+                Sector 23, Faridabad, Haryana | +91 8800536466<br>
+                <a href="mailto:rajpriyanshu07sep@gmail.com">rajpriyanshu07sep@gmail.com</a> |
+                <a href="https://github.com/priyanshurajverma" target="_blank">GitHub</a> |
+                <a href="https://linkedin.com/in/priyanshu-raj-ba9828291" target="_blank">LinkedIn</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Objective</h2>
+            <p>Motivated computer science graduate seeking an entry-level position in web development to apply skills in
+                HTML, CSS, JavaScript, and Python. Passionate about building real-world applications and eager to
+                contribute to team success and grow professionally.</p>
+        </section>
+
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React, Bootstrap, Tailwind CSS, Next.js</li>
+                <li><strong>Backend:</strong> Django, Flask, FastAPI</li>
+                <li><strong>Languages:</strong> Python, JavaScript, SQL</li>
+                <li><strong>Databases:</strong> MySQL, PostgreSQL</li>
+                <li><strong>Tools:</strong> Git, GitHub, VS Code, Postman</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <h3>Warehouse Management System (Current)</h3>
+                <p>Developing a comprehensive WMS using Next.js and FastAPI to solve real-world inventory challenges.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Amazon Clone Website</h3>
+                <p>Built a visually similar and responsive e-commerce website inspired by Amazon. Used HTML, CSS, and JS
+                    to replicate the homepage, product listings, and cart layout.</p>
+            </div>
+
+            <div class="project">
+                <h3>Semantic Search System</h3>
+                <p>Developed a semantic search system using Python and NLP techniques to enhance search relevance and
+                    accuracy.</p>
+            </div>
+
+            <div class="project">
+                <h3>React Web App</h3>
+                <p>Created a single-page application (SPA) using React to demonstrate component-based architecture and
+                    state management.</p>
+            </div>
+
+            <div class="project">
+                <h3>Quiz Game</h3>
+                <p>Built an interactive browser-based quiz game with dynamic scoring using JavaScript.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+
+            <div class="job-title">
+                <h3>B.Tech in Computer Science and Engineering</h3>
+                <span class="date">Pursuing</span>
+            </div>
+            <p>Maharshi Dayanand University, Rohtak</p>
+
+            <div class="job-title" style="margin-top: 15px;">
+                <h3>Diploma in Computer Science and Engineering</h3>
+                <span class="date">Completed 2025</span>
+            </div>
+            <p>Raja Jait Singh Government Polytechnic, Faridabad</p>
+        </section>
+
+        <section class="section">
+            <h2>Strengths</h2>
+            <ul>
+                <li>Quick learner with strong problem-solving skills</li>
+                <li>Team player with effective communication</li>
+                <li>Passionate about web technologies and continuous improvement</li>
+            </ul>
+        </section>
+
+</body>
+
+</html>
