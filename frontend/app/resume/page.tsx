@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import api from "@/lib/api";
+
 import { Button } from "@/components/ui/button";
 import { Download, FileText, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -10,44 +10,13 @@ export default function ResumePage() {
     const [status, setStatus] = useState<"idle" | "tracking" | "downloading" | "done">("idle");
 
     const handleDownload = async () => {
-        setStatus("tracking");
-        try {
-            // Track the download event
-            // We need a visitor_id. For now we assume the session or just pass 0 if analytics isn't strict.
-            // In a real app we'd wait for visitors data context.
-            // Let's just fire and forget or await briefly.
+        setStatus("downloading");
 
-            // To get visitor_id we might need a context, but let's try to track with a new visit call if needed or just skip ID for now if backend allows nullable.
-            // Our backend ResumeDownload requires visitor_id. 
-            // We'll trigger a visit first to get ID.
-
-            const visitRes = await api.post("/analytics/visit", { path: "/resume" });
-            const visitorId = visitRes.data.visitor_id;
-
-            await api.post("/analytics/resume-download", {
-                visitor_id: visitorId,
-                page_source: "resume_page"
-            });
-
-            setStatus("downloading");
-
-            // Simulator download delay
-            setTimeout(() => {
-                // Trigger real download
-                // For now we don't have a real PDF, so we create a dummy one or point to a placeholder.
-                // We'll just alert for now as we don't have a file.
-
-                // window.location.href = "/resume.pdf";
-                alert("Resume download started! (Placeholder)");
-                setStatus("done");
-            }, 1000);
-
-        } catch (error) {
-            console.error("Tracking failed", error);
-            // Fallback download
-            alert("Resume download started! (Fallback)");
+        // Simulator download delay
+        setTimeout(() => {
+            alert("Resume download started! (Placeholder)");
             setStatus("done");
-        }
+        }, 1000);
     };
 
     return (

@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import api from "@/lib/api";
+
 import { cn } from "@/lib/utils";
 
 interface Message {
@@ -36,22 +36,11 @@ export function ChatWidget() {
         setInput("");
         setIsLoading(true);
 
-        try {
-            // Send history + new message
-            const history = messages.map(m => ({ role: m.role, content: m.content }));
-
-            const res = await api.post("/chat/ask", {
-                message: userMsg.content,
-                history: history
-            });
-
-            const botMsg: Message = { role: "model", content: res.data.response };
+        setTimeout(() => {
+            const botMsg: Message = { role: "model", content: "Chat is currently disabled since the backend was removed." };
             setMessages(prev => [...prev, botMsg]);
-        } catch (error) {
-            setMessages(prev => [...prev, { role: "model", content: "Sorry, I'm having trouble connecting right now." }]);
-        } finally {
             setIsLoading(false);
-        }
+        }, 1000);
     };
 
     return (

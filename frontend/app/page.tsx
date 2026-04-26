@@ -4,14 +4,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import api from "@/lib/api";
+
 import { useEffect } from "react";
 
 export default function Home() {
 
   useEffect(() => {
-    // Track Visit
-    api.post("/analytics/visit", { path: "/" }).catch(console.error);
+    // Tracking is disabled since backend was removed.
   }, []);
 
   return (
