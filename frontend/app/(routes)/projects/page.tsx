@@ -39,8 +39,8 @@ export default function ProjectsPage() {
 
     return (
         <div className="max-w-6xl mx-auto py-12">
-            <h1 className="text-3xl font-bold mb-2 text-center">Featured Projects</h1>
-            <p className="text-center text-gray-400 mb-12">A collection of my work and experiments.</p>
+            <h1 className="text-3xl font-bold mb-2 text-center bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Featured Projects</h1>
+            <p className="text-center text-muted-foreground mb-12">A collection of my work and experiments.</p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
                 {projects.map((project, index) => (

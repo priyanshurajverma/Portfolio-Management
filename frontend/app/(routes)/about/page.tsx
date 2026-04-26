@@ -47,12 +47,12 @@ export default function AboutPage() {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="glass p-8 md:p-12 rounded-2xl border border-white/10"
+                className="glass p-8 md:p-12 rounded-2xl border border-slate-200"
             >
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                     {/* Profile & Quick Stats */}
                     <div className="w-full md:w-1/3 space-y-6">
-                        <div className="aspect-square rounded-2xl overflow-hidden bg-white/5 border border-white/10 relative">
+                        <div className="aspect-square rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 relative">
                             {/* Placeholder for Profile image or upload */}
                             <div className="absolute inset-0">
                                 <img src="/profile.jpg" alt="Priyanshu Raj" className="w-full h-full object-cover" />
@@ -60,20 +60,20 @@ export default function AboutPage() {
                         </div>
 
                         <div className="space-y-4">
-                            <div className="p-4 bg-white/5 rounded-xl border border-white/5">
-                                <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Age</p>
-                                <p className="text-2xl font-bold text-white">{age} Years</p>
+                            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Age</p>
+                                <p className="text-2xl font-bold text-slate-900">{age} Years</p>
                             </div>
-                            <div className="p-4 bg-white/5 rounded-xl border border-white/5">
-                                <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Education</p>
-                                <p className="text-lg font-semibold text-white">B.Tech CSE</p>
-                                <p className="text-md text-blue-400">{yearOfStudy === 2 ? '2nd' : yearOfStudy === 3 ? '3rd' : yearOfStudy === 4 ? '4th' : yearOfStudy + 'th'} Year, {semester}th Sem</p>
-                                <p className="text-xs text-gray-500 mt-1">Maharshi Dayanand University</p>
+                            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Education</p>
+                                <p className="text-lg font-semibold text-slate-900">B.Tech CSE</p>
+                                <p className="text-md text-primary">{yearOfStudy === 2 ? '2nd' : yearOfStudy === 3 ? '3rd' : yearOfStudy === 4 ? '4th' : yearOfStudy + 'th'} Year, {semester}th Sem</p>
+                                <p className="text-xs text-muted-foreground mt-1">Maharshi Dayanand University</p>
                             </div>
-                            <div className="p-4 bg-white/5 rounded-xl border border-white/5">
-                                <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Diploma</p>
-                                <p className="text-white font-medium">Passed 2025</p>
-                                <p className="text-green-400 font-bold">8.9 CGPA</p>
+                            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Diploma</p>
+                                <p className="text-slate-900 font-medium">Passed 2025</p>
+                                <p className="text-emerald-600 font-bold">8.9 CGPA</p>
                             </div>
                         </div>
                     </div>
@@ -81,33 +81,33 @@ export default function AboutPage() {
                     {/* Bio & Experience */}
                     <div className="w-full md:w-2/3 space-y-8">
                         <div>
-                            <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Priyanshu Raj</h1>
-                            <p className="text-xl text-gray-400">Full Stack Developer</p>
+                            <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Priyanshu Raj</h1>
+                            <p className="text-xl text-muted-foreground">Full Stack Developer</p>
                         </div>
 
-                        <div className="space-y-4 text-gray-300 leading-relaxed text-lg">
+                        <div className="space-y-4 text-slate-700 leading-relaxed text-lg">
                             <p>
                                 I am a Full Stack Developer currently pursuing my B.Tech in Computer Science and Engineering at Maharshi Dayanand University. I specialize in bridging the gap between complex business requirements and structured, scalable technical architecture.
                             </p>
                             <p>
-                                My current focus is on building high-performance web applications using <span className="text-white font-medium">Next.js</span>, <span className="text-white font-medium">FastAPI (Python)</span>, and <span className="text-white font-medium">MySQL</span>.
+                                My current focus is on building high-performance web applications using <span className="text-slate-900 font-medium">Next.js</span>, <span className="text-slate-900 font-medium">FastAPI (Python)</span>, and <span className="text-slate-900 font-medium">MySQL</span>.
                             </p>
                             <p>
-                                One of my primary current projects is developing a comprehensive <span className="text-purple-400 font-medium">Warehouse Management System</span>, where I am applying modern data modeling techniques to solve real-world inventory and logistics challenges.
+                                One of my primary current projects is developing a comprehensive <span className="text-indigo-600 font-medium">Warehouse Management System</span>, where I am applying modern data modeling techniques to solve real-world inventory and logistics challenges.
                             </p>
                         </div>
 
-                        <div className="border-t border-white/10 pt-8">
+                        <div className="border-t border-slate-200 pt-8">
                             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-                                <span className="w-2 h-8 bg-blue-500 rounded-full inline-block"></span>
+                                <span className="w-2 h-8 bg-primary rounded-full inline-block"></span>
                                 Experience
                             </h2>
                             <div className="space-y-8">
-                                <div className="relative pl-8 border-l border-white/10 pb-2">
-                                    <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-blue-500 border border-black shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
-                                    <h3 className="text-xl font-bold text-white">Full Stack Engineer</h3>
-                                    <p className="text-blue-400 mb-2">Mobeology Communication Pvt Ltd</p>
-                                    <p className="text-gray-400">
+                                <div className="relative pl-8 border-l border-slate-200 pb-2">
+                                    <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-primary border-2 border-white shadow-sm"></div>
+                                    <h3 className="text-xl font-bold text-slate-900">Full Stack Engineer</h3>
+                                    <p className="text-primary mb-2">Mobeology Communication Pvt Ltd</p>
+                                    <p className="text-muted-foreground">
                                         Worked on full-stack development, contributing to the architecture and implementation of scalable web solutions.
                                     </p>
                                 </div>

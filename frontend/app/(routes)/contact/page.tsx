@@ -3,7 +3,7 @@
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import api from "@/lib/api";
+
 import { motion } from "framer-motion";
 import { Loader2, Mail, Send } from "lucide-react";
 
@@ -17,7 +17,16 @@ export default function ContactPage() {
         e.preventDefault();
         setStatus("loading");
         try {
-            await api.post("/contact/submit", formData);
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (!res.ok) {
+                throw new Error("Failed to send message");
+            }
+
             setStatus("success");
             setFormData({ name: "", email: "", message: "" });
         } catch (error) {
@@ -34,54 +43,54 @@ export default function ContactPage() {
                 className="glass p-8 rounded-2xl"
             >
                 <div className="text-center mb-8">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Mail className="w-6 h-6 text-blue-400" />
+                    <div className="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Mail className="w-6 h-6 text-primary" />
                     </div>
-                    <h1 className="text-2xl font-bold">Get in Touch</h1>
-                    <p className="text-gray-400 text-sm mt-2">Have a project in mind or just want to say hi?</p>
+                    <h1 className="text-2xl font-bold text-slate-900">Get in Touch</h1>
+                    <p className="text-muted-foreground text-sm mt-2">Have a project in mind or just want to say hi?</p>
                 </div>
 
                 {status === "success" ? (
-                    <div className="text-center py-10 bg-green-500/10 rounded-lg border border-green-500/20">
-                        <h3 className="text-green-400 font-medium text-lg">Message Sent!</h3>
-                        <p className="text-gray-400 mt-2 text-sm">Thanks for reaching out. I'll get back to you soon.</p>
+                    <div className="text-center py-10 bg-emerald-50 rounded-lg border border-emerald-200">
+                        <h3 className="text-emerald-700 font-medium text-lg">Message Sent!</h3>
+                        <p className="text-muted-foreground mt-2 text-sm">Thanks for reaching out. I'll get back to you soon.</p>
                         <Button variant="ghost" className="mt-4" onClick={() => setStatus("idle")}>Send another</Button>
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                            <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Name</label>
                             <input
                                 type="text"
                                 id="name"
                                 required
                                 value={formData.name}
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-white placeholder:text-gray-600"
+                                className="w-full bg-white border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-slate-900 placeholder:text-muted-foreground"
                                 placeholder="Your Name"
                             />
                         </div>
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
                             <input
                                 type="email"
                                 id="email"
                                 required
                                 value={formData.email}
                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-white placeholder:text-gray-600"
+                                className="w-full bg-white border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-slate-900 placeholder:text-muted-foreground"
                                 placeholder="you@example.com"
                             />
                         </div>
                         <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                            <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">Message</label>
                             <textarea
                                 id="message"
                                 required
                                 rows={4}
                                 value={formData.message}
                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-white placeholder:text-gray-600 resize-none"
+                                className="w-full bg-white border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-slate-900 placeholder:text-muted-foreground resize-none"
                                 placeholder="Tell me about your project..."
                             />
                         </div>

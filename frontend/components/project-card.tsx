@@ -23,16 +23,16 @@ export function ProjectCard({ title, description, tags, demoUrl, repoUrl, index 
             className="glass-card p-6 flex flex-col h-full"
         >
             {/* Placeholder Image Area */}
-            <div className="w-full h-48 bg-white/5 rounded-lg mb-4 mb-4 flex items-center justify-center text-gray-500 text-sm">
+            <div className="w-full h-48 bg-slate-100 rounded-lg mb-4 flex items-center justify-center text-muted-foreground text-sm">
                 Project Image
             </div>
 
             <h3 className="text-xl font-bold mb-2">{title}</h3>
-            <p className="text-gray-400 text-sm mb-4 flex-1">{description}</p>
+            <p className="text-muted-foreground text-sm mb-4 flex-1">{description}</p>
 
             <div className="flex flex-wrap gap-2 mb-6">
                 {tags.map(tag => (
-                    <span key={tag} className="text-xs px-2 py-1 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20">
+                    <span key={tag} className="text-xs px-2 py-1 rounded-full bg-primary/5 text-primary border border-primary/10">
                         {tag}
                     </span>
                 ))}

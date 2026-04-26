@@ -13,7 +13,6 @@ const routes = [
     { href: "/about", label: "About" },
     { href: "/skills", label: "Skills" },
     { href: "/projects", label: "Projects" },
-    { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
 ];
 
@@ -23,8 +22,8 @@ export function Navbar() {
 
     return (
         <nav className="fixed top-0 w-full z-50 px-4 py-3">
-            <div className="glass max-w-7xl mx-auto rounded-full px-6 py-3 flex items-center justify-between">
-                <Link href="/" className="font-bold text-xl tracking-tight">
+            <div className="glass max-w-7xl mx-auto rounded-full px-6 py-3 flex items-center justify-between border border-slate-200/50 shadow-sm">
+                <Link href="/" className="font-bold text-xl tracking-tight text-slate-900">
                     Portfolio
                 </Link>
 
@@ -69,7 +68,7 @@ export function Navbar() {
                                 onClick={() => setIsOpen(false)}
                                 className={cn(
                                     "text-lg font-medium py-2 px-4 rounded-md transition-colors",
-                                    pathname === route.href ? "bg-white/10" : ""
+                                    pathname === route.href ? "bg-accent" : ""
                                 )}
                             >
                                 {route.label}

@@ -62,12 +62,12 @@ export function ChatWidget() {
                         initial={{ opacity: 0, y: 20, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                        className="mb-4 w-[350px] h-[500px] glass rounded-2xl flex flex-col shadow-2xl overflow-hidden border border-white/20"
+                        className="mb-4 w-[350px] h-[500px] glass rounded-2xl flex flex-col shadow-2xl overflow-hidden border border-slate-200"
                     >
                         {/* Header */}
-                        <div className="p-4 bg-white/5 border-b border-white/10 flex justify-between items-center">
-                            <h3 className="font-semibold text-white">AI Assistant</h3>
-                            <Button variant="ghost" size="icon" className="h-8 w-8 text-gray-400 hover:text-white" onClick={() => setIsOpen(false)}>
+                        <div className="p-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center">
+                            <h3 className="font-semibold text-slate-900">AI Assistant</h3>
+                            <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-slate-900" onClick={() => setIsOpen(false)}>
                                 <X className="h-4 w-4" />
                             </Button>
                         </div>
@@ -80,28 +80,28 @@ export function ChatWidget() {
                                     className={cn(
                                         "max-w-[80%] rounded-xl p-3 text-sm",
                                         msg.role === "user"
-                                            ? "bg-blue-600/80 text-white ml-auto rounded-tr-none"
-                                            : "bg-white/10 text-gray-200 mr-auto rounded-tl-none"
+                                            ? "bg-primary text-primary-foreground ml-auto rounded-tr-none"
+                                            : "bg-slate-100 text-slate-900 mr-auto rounded-tl-none border border-slate-200"
                                     )}
                                 >
                                     {msg.content}
                                 </div>
                             ))}
                             {isLoading && (
-                                <div className="bg-white/10 text-gray-200 mr-auto rounded-xl rounded-tl-none p-3 w-12 flex items-center justify-center">
-                                    <Loader2 className="h-4 w-4 animate-spin text-gray-400" />
+                                <div className="bg-slate-100 text-slate-900 mr-auto rounded-xl rounded-tl-none p-3 w-12 flex items-center justify-center border border-slate-200">
+                                    <Loader2 className="h-4 w-4 animate-spin text-primary" />
                                 </div>
                             )}
                         </div>
 
                         {/* Input */}
-                        <form onSubmit={handleSend} className="p-3 border-t border-white/10 bg-white/5 flex gap-2">
+                        <form onSubmit={handleSend} className="p-3 border-t border-slate-200 bg-slate-50 flex gap-2">
                             <input
                                 type="text"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 placeholder="Type a message..."
-                                className="flex-1 bg-white/5 border-none rounded-lg px-3 py-2 text-sm text-white focus:ring-1 focus:ring-blue-500 outline-none placeholder:text-gray-500"
+                                className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-primary outline-none placeholder:text-muted-foreground"
                             />
                             <Button type="submit" size="icon" disabled={isLoading || !input.trim()} className={isLoading ? "opacity-50" : ""}>
                                 <Send className="h-4 w-4" />

@@ -28,7 +28,7 @@ export default function SkillsPage() {
 
     return (
         <div className="max-w-4xl mx-auto py-12">
-            <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Technical Skills</h1>
+            <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Technical Skills</h1>
 
             <div className="grid md:grid-cols-2 gap-8">
                 {skills.map((section, secIndex) => (
@@ -39,7 +39,7 @@ export default function SkillsPage() {
                         transition={{ delay: secIndex * 0.2 }}
                         className="glass p-6 rounded-xl"
                     >
-                        <h2 className="text-xl font-semibold mb-6 border-b border-white/10 pb-2">{section.category}</h2>
+                        <h2 className="text-xl font-semibold mb-6 border-b border-slate-200 pb-2">{section.category}</h2>
                         <div className="space-y-4">
                             {section.items.map((skill, index) => (
                                 <SkillBar key={skill.name} name={skill.name} level={skill.level} index={index} />
